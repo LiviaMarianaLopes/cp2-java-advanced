@@ -30,8 +30,8 @@ public class SecurityConfigurations {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/diplomas").hasRole("USER")
-                        .requestMatchers("/diplomas/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/diplomas/{UUID}").hasRole("USER")
+                        .requestMatchers("/api/diplomas/**").hasRole("ADMIN")
                         .requestMatchers("/v3/api-docs/**").permitAll() // Permitir acesso aos documentos do Swagger
                         .requestMatchers("/swagger-ui/**").permitAll()  // Permitir acesso à interface Swagger
                         .requestMatchers("/swagger-ui.html").permitAll()
