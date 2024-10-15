@@ -2,6 +2,7 @@ package br.com.fiap.cp2.model;
 
 import jakarta.persistence.*;
 
+@Entity
 public class Diplomado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
